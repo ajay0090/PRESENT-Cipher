@@ -69,7 +69,7 @@ Possible Keys
 01111100 0.003906
 Actual 8-bit subkey of k2
 00001000
-```sh
+```
 Please note that possible key reffers to 8 bits guessed in Differential attack, non guessed bits are 0.
 
 

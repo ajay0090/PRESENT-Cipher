@@ -24,7 +24,7 @@ gcc present.c
 gcc present.c
 ./a.out
 Enter Key(only 20-digit hex): 00000000000000000000
-Enter Plain Text: 0000000000000000
+Enter Plain Text(only 16-digit hex): 0000000000000000
 --------------------------------------------------------------------------
 Key:          00000000000000000000
 plain text:   0000000000000000

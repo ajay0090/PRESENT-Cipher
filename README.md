@@ -1,10 +1,13 @@
 # PRESENT-Cipher
 
+We as team Walkie_Talkie of 3 members (Ajay Tarole[11840090], Ashish Kumar Suraj[11840230] and Rudraksh Kashyap[11840970]) have studied the PRESENT Cipher and implemented several aspects of it using different types of codes related to the same. We have also made a report on the Cipher as well as you can see a nice presentation for the same. Thanks:)
+
 We have implemented the PRESENT Cipher, 80 bit in C.
 
   - Generate Difference Distribution Table
   - Generate Linear Approximation Table
   - Differential attack on three round of Present Cipher
+  - Varified 5 rounds integral property of PRESENT
 
 ## Encrytion
 

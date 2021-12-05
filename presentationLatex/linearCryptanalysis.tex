@@ -1,0 +1,72 @@
+\section{Linear Cryptanalysis}
+
+\begin{frame}{LAT of the S-box}
+	\begin{figure}[h!]
+	\centering
+	\scalebox{0.8}{
+		\begin{tabular}{ |c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c| }
+			\hline
+			& 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & A & B & C & D & E & F  \\ \hline \hline
+			0& 8 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\ 
+			1& - & - & - & - & - & -4 & - & -4 & - & - & - & - & - & -4 & - & 4 \\
+			2& - & - & 2 & 2 & -2 & -2 & - & - & 2 & -2 & - & 4 & - & 4 & -2 & 2 \\
+			3& - & - & 2 & 2 & 2 & -2 & -4 & - & -2 & 2 & -4 & - & - & - & -2 & -2 \\
+			4& - & - & -2 & 2 & -2 & -2 & - & 4 & -2 & -2 & - & -4 & - & - & -2 & 2 \\
+			5 & - & - & -2 & 2 & -2 & 2 & - & - & 2 & 2 & -4 & - & 4 & - & 2 & 2\\
+			6 & - & - & - & -4 & - & - & -4 & - & - & -4 & - & - & 4 & - & - & -\\
+			7 & - & - & - & 4 & 4 & - & - & - & - & -4 & - & - & - & - & 4 & -\\
+			8 & - & - & 2 & -2 & - & - & -2 & 2 & -2 & 2 & - & - & -2 & 2 & 4 & 4\\
+			9 & - & 4 & -2 & -2 & - & - & 2 & -2 & -2 & -2 & -4 & - & -2 & 2 & - & -\\
+			A & - & - & 4 & - & 2 & 2 & 2 & -2 & - & - & - & -4 & 2 & 2 & -2 & 2\\
+			B & - & -4 & - & - & -2 & -2 & 2 & -2 & -4 & - & - & - & 2 & 2 & 2 & -2\\
+			C & - & - & - & - & -2 & -2 & -2 & -2 & 4 & - & - & -4 & -2 & 2 & 2 & -2\\
+			D & - & 4 & 4 & - & -2 & -2 & 2 & 2 & - & - & - & - & 2 & -2 & 2 & -2\\
+			E & - & - & 2 & 2 & -4 & 4 & -2 & -2 & -2 & -2 & - & - & -2 & -2 & - & -\\
+			F & - & 4 & -2 & 2 & - & - & -2 & -2 & -2 & 2 & 4 & - & 2 & 2 & - & -\\
+			\hline
+	\end{tabular}}
+\captionof{table}{Linear Approximation Table}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Observations}
+\begin{itemize}
+	\item Maximum bias $\leq2^{-2}$
+	\item For a Single bit $\leq2^{-3}$
+	\item Bias Computation \begin{equation*}
+		2^{m-1}\prod_{i=1}^{m} \epsilon_i
+	\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Analysis}
+\begin{itemize}
+	\item Total 3 Cases to analyse the linear approximation of 4 rounds
+	\item Results to bound the linear approximation bias for 28 rounds
+	\item Let $\epsilon_{4R}$ be the maximal bias of a linear approximation of four
+	rounds of present, then $\epsilon_{4R}\leq\frac{1}{2^7}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proof$\ldots$}
+	\begin{itemize}
+		\item Bias Calculation for 4 S-boxes:
+		\begin{equation*}
+			\epsilon_4^{4} \leq 2^{4-1} \times (2^{-2})^2 \times (2^{-3})^2 \implies \epsilon_4^{4} \leq 2^{-7}
+		\end{equation*}
+		\item Bias Calculation for 5 S-boxes:
+	    \begin{equation*}
+	    	\epsilon_4^{5} \leq 2^{5-1} \times (2^{-2})^4 \times (2^{-3}) \implies \epsilon_4^{5} \leq 2^{-7}
+	    \end{equation*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Resistent to the Linear Attack}
+	\begin{itemize}
+		\item Maximal Bias for 28-round linear approximation
+		\item Now assume that the cryptanalyst needs to approximate only only 28 rounds
+		\item So total $2^{86}$ known plaintexts are required 
+		\item Which are greater than the available plaintexts space, that is $2^{64}$
+		\item Proved
+	\end{itemize}
+\end{frame}

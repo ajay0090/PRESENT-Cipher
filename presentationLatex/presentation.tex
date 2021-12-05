@@ -1,0 +1,58 @@
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\usepackage{lmodern}
+\usetheme{Frankfurt}
+\usecolortheme{crane}
+\usepackage[noend]{algorithmic}
+\usepackage{sidecap}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{PRESENT Cipher}  
+\author{\texttt{Walkie Talkie}} 
+\institute{
+	\includegraphics[scale=0.08]{logoiitbh}
+	
+	Department of \texttt{EECS}\\ 
+	Indian Institute of Technology Bhilai}
+
+\begin{document}
+	\begin{frame}
+	\titlepage
+
+\end{frame} 
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>
+	\frametitle{Outline}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+\input{intro}
+\input{spec}
+\input{DC}
+\input{linearCryptanalysis}
+\input{Integral}
+\input{bpnominate}
+\input{conclu}
+
+
+\begin{frame}{Thanks}
+\begin{block}{Team Members}
+	\begin{itemize}
+	    \item Ajay Tarole
+		\item Ashish Kumar Suraj
+		\item Rudraksh Kashyap
+	\end{itemize}
+\end{block}
+\begin{block}{Implementation Info}
+	\begin{itemize}
+		\item Github Link: \href{https://github.com/ajay0090/PRESENT-Cipher}{https://github.com/ajay0090/PRESENT-Cipher}
+	\end{itemize}
+\end{block}
+\end{frame}
+\end{document}

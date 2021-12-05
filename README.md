@@ -70,7 +70,6 @@ Possible Keys
 Actual 8-bit subkey of k2
 00001000
 ```
-Please note that possible key reffers to 8 bits guessed in Differential attack, non guessed bits are 0.
 
 
 ## 5 round Integral property of PRESENT
